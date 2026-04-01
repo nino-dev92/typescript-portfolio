@@ -1,0 +1,56 @@
+/* src/styles.css */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #020617;
+}
+
+.headera {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: white;
+}
+
+.intro-section {
+  padding: 80px;
+  text-align: center;
+}
+
+.services-div {
+  display: flex;
+  gap: 40px;
+  padding: 50px;
+  align-items: center;
+}
+
+.services-image {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.skills-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.skill-list {
+  list-style: none;
+  line-height: 2;
+}
