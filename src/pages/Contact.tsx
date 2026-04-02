@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 import "./contact.css";
 
 const Contact = () => {
@@ -8,6 +9,11 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    axios.post("http://localhost:3000/send-email", { name, email, message }, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     alert("Message sent!");
     setName("");
     setEmail("");
@@ -26,9 +32,9 @@ const Contact = () => {
           <h1>Contact Me</h1>
 
           <form className="contact-form" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Your Name" required value={name} onChange={(e) => setName(e.target.value)} />
-            <input type="email" placeholder="Your Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-            <textarea placeholder="Your Message" rows={5} required value={message} onChange={(e) => setMessage(e.target.value)} />
+            <input type="text" name="name" placeholder="Your Name" required value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="email" name="email" placeholder="Your Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+            <textarea name="message" placeholder="Your Message" rows={5} required value={message} onChange={(e) => setMessage(e.target.value)} />
             <button type="submit">Send Message</button>
           </form>
 
