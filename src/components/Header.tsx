@@ -4,7 +4,11 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header">
-      <a href="mailto:nnejirichard@yahoo.com" className="headeremail">
+      <a
+        href="mailto:nnejirichard@yahoo.com"
+        target="_blank"
+        className="headeremail"
+      >
         nnejirichard@yahoo.com
       </a>
 

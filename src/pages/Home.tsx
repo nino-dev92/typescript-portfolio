@@ -13,6 +13,14 @@ const skills = [
   "SQL",
   "MONGO DB",
   "GIT",
+  "PYTHON",
+];
+
+const works = [
+  {
+    name: "Banking App",
+    url: "https://cool-queijadas-f87675.netlify.app/",
+  },
 ];
 
 const container = {
@@ -40,7 +48,8 @@ const Home = () => {
         transition={{ duration: 0.8 }}
       >
         <h1>
-          Hi, I'm Richard<br />
+          Hi, I'm Richard
+          <br />
           <span className="highlight">Full Stack Developer</span>
         </h1>
 
@@ -69,6 +78,32 @@ const Home = () => {
               whileHover={{ scale: 1.1 }}
             >
               {skill}
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* WORKS */}
+      <motion.section
+        className="skills-section"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h2 className="works-title">My Works</h2>
+
+        <div className="works-grid">
+          {works.map((work) => (
+            <motion.div
+              key={work.name}
+              className="work-card"
+              variants={item}
+              whileHover={{ scale: 1.1 }}
+            >
+              <a target="_blank" href={work.url}>
+                {work.name}
+              </a>
             </motion.div>
           ))}
         </div>

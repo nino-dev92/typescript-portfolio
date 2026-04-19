@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "./contact.css";
@@ -6,18 +6,35 @@ import "./contact.css";
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    axios.post("http://localhost:3000/send-email", { name, email, message }, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    alert("Message sent!");
-    setName("");
-    setEmail("");
-    setMessage("");
+  const [message, setMessage] = useState<string | null>("");
+  const [errMessage, setErrMessage] = useState<string | null>("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setErrMessage("");
+    }, 2000);
+  }, [errMessage]);
+  const handleSubmit = async (e: React.FormEvent) => {
+    try {
+      e.preventDefault();
+      const response: Response = await axios.post(
+        "https://portfolio-backend-production-5460.up.railway.app/send-email",
+        { name, email, message },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      if (response.status === 200) {
+        setErrMessage("Message sent!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error: any) {
+      setErrMessage(error?.response?.message);
+    }
   };
   return (
     <div className="contact-container">
@@ -32,29 +49,65 @@ const Contact = () => {
           <h1>Contact Me</h1>
 
           <form className="contact-form" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Your Name" required value={name} onChange={(e) => setName(e.target.value)} />
-            <input type="email" name="email" placeholder="Your Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-            <textarea name="message" placeholder="Your Message" rows={5} required value={message} onChange={(e) => setMessage(e.target.value)} />
+            <div>
+              <p style={{ color: "green" }}>{errMessage}</p>
+            </div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows={5}
+              required
+              value={message as string}
+              onChange={(e) => setMessage(e.target.value)}
+            />
             <button type="submit">Send Message</button>
           </form>
 
           {/* SOCIAL ICONS */}
           <div className="socials">
-            <a href="https://www.facebook.com/share/159twUee3u/?mibextid=wwXIfr" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/share/159twUee3u/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
                 alt="facebook"
               />
             </a>
 
-            <a href="https://www.instagram.com/italiannino_92?igsh=d2Y3azYzNzMyanJy&utm_source=qr" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.instagram.com/italiannino_92?igsh=d2Y3azYzNzMyanJy&utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
                 alt="instagram"
               />
             </a>
 
-            <a href="http://www.linkedin.com/in/richard-nneji-30" target="_blank" rel="noreferrer">
+            <a
+              href="http://www.linkedin.com/in/richard-nneji-30"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/733/733561.png"
                 alt="linkedin"

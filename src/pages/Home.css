@@ -33,7 +33,7 @@
   text-align: center;
 }
 
-.skills-title {
+.skills-title .works-title {
   font-size: 2.2rem;
   margin-bottom: 40px;
   color: #38bdf8;
@@ -46,6 +46,18 @@
   gap: 20px;
   max-width: 900px;
   margin: 0 auto;
+}
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.works-grid a {
+  text-decoration: none;
+  color: white;
 }
 
 /* CARD */
@@ -62,9 +74,28 @@
   transition: all 0.3s ease;
   cursor: pointer;
 }
+.work-card {
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+
+  font-size: 1rem;
+  color: #e2e8f0;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
 /* HOVER EFFECT */
 .skill-card:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+}
+.work-card:hover {
   background: #38bdf8;
   color: #020617;
   transform: translateY(-5px);
