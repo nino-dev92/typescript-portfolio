@@ -9,6 +9,7 @@ const skills = [
   "REACT JS",
   "TYPESCRIPT",
   "NODE JS",
+  "NEXT JS",
   "PHP",
   "SQL",
   "MONGO DB",
@@ -20,6 +21,10 @@ const works = [
   {
     name: "Banking App",
     url: "https://cool-queijadas-f87675.netlify.app/",
+  },
+  {
+    name: "Job Posting App",
+    url: "https://rainbow-fudge-2bfdbc.netlify.app/",
   },
 ];
 
@@ -85,7 +90,7 @@ const Home = () => {
 
       {/* WORKS */}
       <motion.section
-        className="skills-section"
+        className="skills-section works-section"
         variants={container}
         initial="hidden"
         whileInView="visible"
@@ -99,11 +104,31 @@ const Home = () => {
               key={work.name}
               className="work-card"
               variants={item}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05, y: -8 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <a target="_blank" href={work.url}>
-                {work.name}
-              </a>
+              <div className="work-card-content">
+                <h3>{work.name}</h3>
+                <p>Check out this project</p>
+                <a
+                  href={work.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="work-button"
+                >
+                  Visit Project
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                  </svg>
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
