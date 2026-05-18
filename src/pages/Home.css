@@ -33,7 +33,8 @@
   text-align: center;
 }
 
-.skills-title .works-title {
+.skills-title,
+.works-title {
   font-size: 2.2rem;
   margin-bottom: 40px;
   color: #38bdf8;
@@ -46,9 +47,16 @@
   gap: 20px;
   max-width: 900px;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
+
 .works-section {
   margin-bottom: 100px;
+}
+
+.works-section h2 {
+  text-align: center;
 }
 
 .works-grid {
@@ -196,4 +204,27 @@
 
 .work-button:hover svg {
   transform: translate(3px, -3px);
+}
+
+@media (max-width: 500px) {
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+  }
+  .skill-card {
+    width: 6rem;
+  }
+  .skills-section {
+    place-content: center;
+  }
+  .works-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+  .works-grid {
+    display: flex;
+    flex-direction: column;
+  }
 }

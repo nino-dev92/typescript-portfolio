@@ -90,7 +90,7 @@ const Home = () => {
 
       {/* WORKS */}
       <motion.section
-        className="skills-section works-section"
+        className="works-section"
         variants={container}
         initial="hidden"
         whileInView="visible"
