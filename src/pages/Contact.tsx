@@ -36,7 +36,12 @@ const Contact = () => {
       setErrMessage(error?.response?.message);
     }
   };
+
   return (
+    <>
+    <title>Contact</title>
+
+    {/**Main Content */}  
     <div className="contact-container">
       <div className="contact-wrapper">
         {/* LEFT SIDE */}
@@ -137,6 +142,7 @@ const Contact = () => {
         </motion.div>
       </div>
     </div>
+  </>
   );
 };
 

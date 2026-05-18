@@ -21,10 +21,12 @@ const works = [
   {
     name: "Banking App",
     url: "https://cool-queijadas-f87675.netlify.app/",
+    completed: "70%"
   },
   {
     name: "Job Posting App",
     url: "https://rainbow-fudge-2bfdbc.netlify.app/",
+    completed: "75%"
   },
 ];
 
@@ -44,6 +46,11 @@ const item = {
 
 const Home = () => {
   return (
+<>
+    <title>Richard Nneji</title>
+    <link rel="icon" type="image/png" href="/logo.png"></link>
+
+    {/**Main Content */}
     <main className="home">
       {/* INTRO */}
       <motion.section
@@ -110,6 +117,7 @@ const Home = () => {
               <div className="work-card-content">
                 <h3>{work.name}</h3>
                 <p>Check out this project</p>
+                <p>Completed: {work.completed}</p>
                 <a
                   href={work.url}
                   target="_blank"
@@ -134,6 +142,7 @@ const Home = () => {
         </div>
       </motion.section>
     </main>
+</>
   );
 };
 
