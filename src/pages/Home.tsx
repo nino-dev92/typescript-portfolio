@@ -13,7 +13,6 @@ import reactIcon from "../assets/skills/react.png";
 import tsIcon from "../assets/skills/typescript.png";
 import nodeIcon from "../assets/skills/nodejs.png";
 import nextIcon from "../assets/skills/nextjs.png";
-import phpIcon from "../assets/skills/php.png";
 import sqlIcon from "../assets/skills/sql.png";
 import mongoIcon from "../assets/skills/mongodb.png";
 import gitIcon from "../assets/skills/git.png";
