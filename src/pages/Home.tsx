@@ -147,6 +147,20 @@ const Home = () => {
       />
       <link rel="icon" type="image/png" href="/logo.png" />
 
+      <a
+        href="https://wa.me/2349058344496/?text=Hello%20Richard,%20I%27d%20like%20to%20talk%20about%20a%20project."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact Richard on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 h-14 w-14 overflow-hidden rounded-full bg-[#25D366] p-1.5 shadow-[0_8px_24px_rgba(37,211,102,0.35)] transition-transform duration-200 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366] max-[500px]:bottom-4 max-[500px]:right-4"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+          alt=""
+          className="h-full w-full object-contain"
+        />
+      </a>
+
       <main className="min-h-screen bg-linear-to from-[#020617] to-[#0f172a] text-white px-5 py-10">
         {/* INTRO */}
         <motion.section
