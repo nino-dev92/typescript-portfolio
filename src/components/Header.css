@@ -3,11 +3,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
   background-color: #0f172a;
   color: white;
 }
-.headeremail{
+.headeremail {
   text-decoration: none;
   color: white;
 }

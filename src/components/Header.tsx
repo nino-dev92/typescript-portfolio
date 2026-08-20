@@ -3,20 +3,20 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="flex justify-between p-2 md:p-4">
       <a
         href="mailto:nnejirichard@yahoo.com"
         target="_blank"
-        className="headeremail"
+        className="text-sm md:text-lg"
       >
         nnejirichard@yahoo.com
       </a>
 
       <nav className="headera">
-        <NavLink to="/" className="link">
+        <NavLink to="/" className="text-sm md:text-lg">
           Home
         </NavLink>
-        <NavLink to="/contact" className="link">
+        <NavLink to="/contact" className="text-sm md:text-lg">
           Contact
         </NavLink>
       </nav>
