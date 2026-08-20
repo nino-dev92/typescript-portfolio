@@ -594,13 +594,14 @@ const Home = () => {
         <section id="works">
           <motion.div
             className="
-              mx-auto
-              max-w-275
-              px-6
-              py-24
-              sm:px-8
-              lg:px-10
-            "
+      mx-auto
+      max-w-275
+      px-5
+      py-20
+      sm:px-8
+      sm:py-24
+      lg:px-10
+    "
             variants={container}
             initial="hidden"
             whileInView="visible"
@@ -610,161 +611,255 @@ const Home = () => {
             }}
           >
             {/* Section heading */}
-            <motion.div variants={item} className="max-w-165">
+            <motion.div
+              variants={item}
+              className="mx-auto max-w-165 text-center"
+            >
               <p
                 className="
-                  text-xs
-                  font-semibold
-                  uppercase
-                  tracking-[0.18em]
-                  text-blue-400
-                "
+          text-xs
+          font-semibold
+          uppercase
+          tracking-[0.18em]
+          text-blue-400
+        "
               >
                 Selected work
               </p>
 
               <h2
                 className="
-                  mt-3
-                  text-3xl
-                  font-semibold
-                  tracking-tight
-                  text-white
-                  sm:text-4xl
-                "
+          mt-3
+          text-3xl
+          font-semibold
+          tracking-tight
+          text-white
+          sm:text-4xl
+        "
               >
                 Things I&apos;ve built.
               </h2>
 
-              <p className="mt-4 text-base leading-7 text-slate-400">
+              <p className="mt-4 text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">
                 A selection of applications and interfaces I&apos;ve worked on
                 across different problem domains.
               </p>
             </motion.div>
 
             {/* Projects */}
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div
+              className="
+        mx-auto
+        mt-12
+        grid
+        w-full
+        max-w-230
+        grid-cols-1
+        justify-items-center
+        gap-5
+        sm:mt-14
+        sm:grid-cols-2
+        sm:gap-6
+        lg:grid-cols-3
+        lg:gap-6
+      "
+            >
               {works.map((work) => (
                 <motion.article
                   key={work.name}
                   variants={item}
                   className="
-                    group
-                    flex
-                    flex-col
-                    overflow-hidden
-                    rounded-lg
-                    border
-                    border-white/8
-                    bg-[#0d1117]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:border-white/15
-                    hover:shadow-2xl
-                    hover:shadow-black/30
-                  "
+            group
+            flex
+            w-full
+            max-w-[340px]
+            flex-col
+            overflow-hidden
+            rounded-xl
+            border
+            border-white/8
+            bg-[#0d1117]
+            transition-all
+            duration-300
+            hover:-translate-y-1
+            hover:border-white/15
+            hover:shadow-xl
+            hover:shadow-black/30
+            sm:max-w-[330px]
+            lg:max-w-[340px]
+          "
                 >
-                  {/* Project image */}
+                  {/* ---------------------------------------------------------- */}
+                  {/* PROJECT IMAGE */}
+                  {/* ---------------------------------------------------------- */}
+
                   <div
                     className="
-                      relative
-                      aspect-video
-                      overflow-hidden
-                      bg-slate-900
-                    "
+              relative
+              aspect-[16/9]
+              w-full
+              overflow-hidden
+              bg-slate-900
+            "
                   >
                     <img
                       src={work.image}
                       alt={`Preview of ${work.name}`}
                       loading="lazy"
                       className="
-                        h-full
-                        w-full
-                        object-cover
-                        transition-transform
-                        duration-500
-                        group-hover:scale-[1.03]
-                      "
+                h-full
+                w-full
+                object-cover
+                transition-transform
+                duration-500
+                group-hover:scale-[1.04]
+              "
                     />
 
+                    {/* Image overlay */}
                     <div
                       className="
-                        absolute
-                        inset-0
-                        bg-linear-to-t
-                        from-[#0d1117]
-                        via-transparent
-                        to-transparent
-                        opacity-70
-                      "
+                pointer-events-none
+                absolute
+                inset-0
+                bg-linear-to-t
+                from-[#0d1117]/80
+                via-transparent
+                to-transparent
+              "
                     />
+
+                    {/* Completion badge */}
+                    <span
+                      className="
+                absolute
+                right-3
+                top-3
+                rounded-full
+                border
+                border-white/10
+                bg-[#080b10]/80
+                px-2.5
+                py-1
+                text-[11px]
+                font-medium
+                text-slate-300
+                backdrop-blur-md
+              "
+                    >
+                      {work.completed}% complete
+                    </span>
                   </div>
 
-                  {/* Project information */}
-                  <div className="flex flex-1 flex-col p-5">
-                    {/* Name + completion */}
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-lg font-medium text-white">
-                        {work.name}
-                      </h3>
+                  {/* ---------------------------------------------------------- */}
+                  {/* PROJECT INFORMATION */}
+                  {/* ---------------------------------------------------------- */}
 
-                      <span className="shrink-0 text-xs font-medium text-slate-500">
-                        {work.completed}%
-                      </span>
-                    </div>
+                  <div
+                    className="
+              flex
+              min-h-[210px]
+              flex-1
+              flex-col
+              p-4
+              sm:p-5
+            "
+                  >
+                    {/* Project name */}
+                    <h3
+                      className="
+                text-base
+                font-semibold
+                leading-6
+                text-white
+                sm:text-lg
+              "
+                    >
+                      {work.name}
+                    </h3>
 
                     {/* Description */}
-                    <p className="mt-3 text-sm leading-6 text-slate-500">
+                    <p
+                      className="
+                mt-2.5
+                text-xs
+                leading-5
+                text-slate-500
+                sm:text-sm
+                sm:leading-6
+              "
+                    >
                       {work.description}
                     </p>
 
+                    {/* Spacer */}
+                    <div className="flex-1" />
+
                     {/* Progress */}
-                    <div className="mt-5 h-1 overflow-hidden rounded-full bg-white/6">
-                      <div
-                        className="h-full rounded-full bg-blue-500"
-                        style={{
-                          width: `${work.completed}%`,
-                        }}
-                      />
+                    <div className="mt-5">
+                      <div className="mb-2 flex items-center justify-between">
+                        <span className="text-[10px] uppercase tracking-wider text-slate-600">
+                          Progress
+                        </span>
+
+                        <span className="text-[10px] font-medium text-slate-500">
+                          {work.completed}%
+                        </span>
+                      </div>
+
+                      <div className="h-1 overflow-hidden rounded-full bg-white/6">
+                        <div
+                          className="
+                    h-full
+                    rounded-full
+                    bg-blue-500
+                    transition-all
+                    duration-700
+                  "
+                          style={{
+                            width: `${work.completed}%`,
+                          }}
+                        />
+                      </div>
                     </div>
 
-                    {/* Link */}
-                    <div className="mt-6">
-                      <a
-                        href={work.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    {/* View project */}
+                    <a
+                      href={work.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                mt-5
+                inline-flex
+                w-fit
+                items-center
+                gap-2
+                text-xs
+                font-medium
+                text-blue-400
+                transition-colors
+                hover:text-blue-300
+                sm:text-sm
+              "
+                    >
+                      View project
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        aria-hidden="true"
                         className="
-                          inline-flex
-                          items-center
-                          gap-2
-                          text-sm
-                          font-medium
-                          text-blue-400
-                          transition-colors
-                          hover:text-blue-300
-                        "
+                  transition-transform
+                  duration-200
+                  group-hover:translate-x-0.5
+                "
                       >
-                        View project
-                        <svg
-                          width="15"
-                          height="15"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                          aria-hidden="true"
-                          className="
-                            transition-transform
-                            duration-200
-                            group-hover:translate-x-0.5
-                          "
-                        >
-                          <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                      </a>
-                    </div>
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
+                    </a>
                   </div>
                 </motion.article>
               ))}
