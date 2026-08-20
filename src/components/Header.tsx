@@ -3,7 +3,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="flex justify-between p-2 md:p-4">
+    <header className="flex justify-between p-2 sm:p-4">
       <a
         href="mailto:nnejirichard@yahoo.com"
         target="_blank"
