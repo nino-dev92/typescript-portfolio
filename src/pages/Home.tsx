@@ -25,7 +25,7 @@ import pythonIcon from "../assets/skills/python.png";
 import dockerIcon from "../assets/skills/docker.png";
 import kubernetesIcon from "../assets/skills/kubernetes.png";
 import githubActionsIcon from "../assets/skills/github.png";
-import terraformIcon from "../assets/skills/terraform.png";
+import ciCdIcon from "../assets/skills/github-actions.svg";
 import tailwindIcon from "../assets/skills/tailwind.png";
 import expressIcon from "../assets/skills/express-wordmark.svg";
 import apiIcon from "../assets/skills/backend.png";
@@ -76,7 +76,7 @@ const skillGroups = [
       { name: "Docker", icon: dockerIcon },
       { name: "Kubernetes", icon: kubernetesIcon },
       { name: "GitHub Actions", icon: githubActionsIcon },
-      { name: "Infrastructure as Code", icon: terraformIcon },
+      { name: "CI/CD", icon: ciCdIcon },
     ],
   },
 ];
