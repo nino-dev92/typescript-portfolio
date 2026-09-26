@@ -6,11 +6,11 @@ import bankingImage from "../assets/works/banking-app.png";
 import retailProImage from "../assets/works/retail-pro-app.png";
 import jobPostingImage from "../assets/works/job-posting-app.png";
 import ngoImage from "../assets/works/ngo-website.png";
+import invoiceImage from "../assets/works/invoice-app.png";
 import chatAppImage from "../assets/works/chat-app.png";
 import adolImage from "../assets/works/adol-paul-college.png";
 
 // Skill icons
-import htmlIcon from "../assets/skills/html5.png";
 import cssIcon from "../assets/skills/css3.png";
 import jsIcon from "../assets/skills/javascript.png";
 import reactIcon from "../assets/skills/react.png";
@@ -38,7 +38,6 @@ const skillGroups = [
   {
     title: "Frontend",
     items: [
-      { name: "HTML5", icon: htmlIcon },
       { name: "CSS3", icon: cssIcon },
       { name: "JavaScript", icon: jsIcon },
       { name: "TypeScript", icon: tsIcon },
@@ -85,7 +84,6 @@ const works = [
   {
     name: "Retail Pro",
     url: "https://dancing-sunflower-a89cfe.netlify.app/",
-    completed: 70,
     description:
       "A retail management application focused on inventory, sales, and operational workflows.",
     image: retailProImage,
@@ -93,7 +91,6 @@ const works = [
   {
     name: "Banking Application",
     url: "https://cool-queijadas-f87675.netlify.app/",
-    completed: 70,
     description:
       "A consumer banking interface for managing accounts, balances, and transactions.",
     image: bankingImage,
@@ -101,15 +98,20 @@ const works = [
   {
     name: "Job Platform",
     url: "https://rainbow-fudge-2bfdbc.netlify.app/",
-    completed: 75,
     description:
       "A job marketplace connecting candidates with employers and opportunities.",
     image: jobPostingImage,
   },
   {
+    name: "Invoice App",
+    url: "https://invoice-builder-mu-three.vercel.app/",
+    description:
+      "An application used to generate invoices and receipts in PDF format.",
+    image: invoiceImage,
+  },
+  {
     name: "NGO Website",
     url: "https://brilliant-brioche-3c9eb4.netlify.app/",
-    completed: 90,
     description:
       "A nonprofit website designed around awareness, communication, and donations.",
     image: ngoImage,
@@ -117,7 +119,6 @@ const works = [
   {
     name: "Chat Application",
     url: "https://nino-chat-app.netlify.app/",
-    completed: 60,
     description:
       "A real-time messaging application with a focused and minimal interface.",
     image: chatAppImage,
@@ -125,7 +126,6 @@ const works = [
   {
     name: "Adol Paul College",
     url: "https://adolpaulschool.netlify.app/",
-    completed: 50,
     description:
       "A responsive school website focused on presenting information clearly to visitors.",
     image: adolImage,
@@ -135,7 +135,6 @@ const works = [
 // -----------------------------------------------------------------------------
 // ANIMATION VARIANTS
 // -----------------------------------------------------------------------------
-
 const container: Variants = {
   hidden: {},
   visible: {
@@ -218,33 +217,8 @@ const Home = () => {
         />
       </a>
 
-      {/* ------------------------------------------------------------------ */}
-      {/* MAIN */}
-      {/* ------------------------------------------------------------------ */}
-
       <main className="min-h-screen bg-[#080b10] text-slate-100">
-        {/* ================================================================ */}
-        {/* HERO */}
-        {/* ================================================================ */}
-
         <section className="relative overflow-hidden border-b border-white/6">
-          {/* Subtle background glow */}
-          <div
-            aria-hidden="true"
-            className="
-              pointer-events-none
-              absolute
-              left-1/2
-              top-0
-              h-125
-              w-125
-              -translate-x-1/2
-              rounded-full
-              bg-blue-500/8
-              blur-3xl
-            "
-          />
-
           <div
             className="
               relative
@@ -728,27 +702,6 @@ const Home = () => {
                 to-transparent
               "
                     />
-
-                    {/* Completion badge */}
-                    <span
-                      className="
-                absolute
-                right-3
-                top-3
-                rounded-full
-                border
-                border-white/10
-                bg-[#080b10]/80
-                px-2.5
-                py-1
-                text-[11px]
-                font-medium
-                text-slate-300
-                backdrop-blur-md
-              "
-                    >
-                      {work.completed}% complete
-                    </span>
                   </div>
 
                   {/* ---------------------------------------------------------- */}
@@ -794,34 +747,6 @@ const Home = () => {
 
                     {/* Spacer */}
                     <div className="flex-1" />
-
-                    {/* Progress */}
-                    <div className="mt-5">
-                      <div className="mb-2 flex items-center justify-between">
-                        <span className="text-[10px] uppercase tracking-wider text-slate-600">
-                          Progress
-                        </span>
-
-                        <span className="text-[10px] font-medium text-slate-500">
-                          {work.completed}%
-                        </span>
-                      </div>
-
-                      <div className="h-1 overflow-hidden rounded-full bg-white/6">
-                        <div
-                          className="
-                    h-full
-                    rounded-full
-                    bg-blue-500
-                    transition-all
-                    duration-700
-                  "
-                          style={{
-                            width: `${work.completed}%`,
-                          }}
-                        />
-                      </div>
-                    </div>
 
                     {/* View project */}
                     <a
